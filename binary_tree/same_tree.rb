@@ -35,21 +35,9 @@ Constraints:
 # @param {TreeNode} p
 # @param {TreeNode} q
 # @return {Boolean}
-def collect(root)
-  queue = [root]
-  nodes = []
-  while queue.any?
-    node = queue.shift
-    nodes << node&.val
+def same_tree?(p, q)
+  return true if !p && !q
+  return false if q&.val != p&.val
 
-    queue.append(node&.left)
-    queue.append(node&.right)
-  end
-  nodes
-end
-
-def is_same_tree(p, q)
-  nodes_p = collect(p)
-  nodes_q = collect(q)
-  nodes_p == nodes_q
+  is_same_tree(p.left, q.left) && is_same_tree(p.right, q.right)
 end
