@@ -86,7 +86,7 @@ def full_justified_text(line, max_width)
   return left_justified_text(line, max_width) if line.size == 1
 
   gaps = line.length - 1
-  chars = line.sum { |word| word.size }
+  chars = line.sum(&:size)
   spaces = max_width - chars
   even_spaces = spaces / gaps
   odd_spaces = spaces % gaps
