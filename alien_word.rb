@@ -31,7 +31,7 @@ Constraints:
 # @param {String[]} words
 # @param {String} order
 # @return {Boolean}
-def is_alien_sorted(words, order)
+def alien_sorted?(words, order)
   normal = ('a'..'z').to_a.join
   words = words.map { |word| word.tr(order, normal) }
   words.sort == words

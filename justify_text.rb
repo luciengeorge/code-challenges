@@ -91,13 +91,13 @@ def full_justified_text(line, max_width)
   even_spaces = spaces / gaps
   odd_spaces = spaces % gaps
 
-  result = ""
+  result = ''
   line[0...-1].each do |word|
     result += word
-    result += " " * even_spaces
+    result += ' ' * even_spaces
     next if odd_spaces.zero?
 
-    result += " "
+    result += ' '
     odd_spaces -= 1
   end
   result += line[-1]
