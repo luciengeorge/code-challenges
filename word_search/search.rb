@@ -23,7 +23,6 @@ Constraints:
   words[i] consists of lowercase English letters.
   All the strings of words are unique.
 =end
-
 require_relative 'trie_node'
 
 # @param {Character[][]} board
@@ -70,12 +69,10 @@ def build_trie(words)
       curr = curr.next[i]
     end
     curr.word = word
-    binding.pry
   end
   root
 end
 
-
-board = [['o', 'a', 'a', 'n'], ['e', 't', 'a', 'e'], ['i', 'h', 'k', 'r'], ['i', 'f', 'l', 'v']]
-words = ['oath', 'pea', 'eat', 'rain']
+board = [%w[o a a n], %w[e t a e], %w[i h k r], %w[i f l v]]
+words = %w[oath pea eat rain]
 p find_words(board, words)
