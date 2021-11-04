@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/asteroid-collision/
+
 def asteroid_collision(asteroids)
   result = []
   asteroids.each do |asteroid|
