@@ -11,7 +11,6 @@ end
 def left_tree(node, tree = [], level = 0)
   return [] if node.nil?
 
-  p tree
   left_tree(node.left, tree, level + 1)
   tree.push("#{node.val}-#{level}")
   left_tree(node.right, tree, level + 1)
