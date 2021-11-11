@@ -39,5 +39,5 @@ def same_tree?(p, q)
   return true if !p && !q
   return false if q&.val != p&.val
 
-  is_same_tree(p.left, q.left) && is_same_tree(p.right, q.right)
+  same_tree?(p.left, q.left) && same_tree?(p.right, q.right)
 end
