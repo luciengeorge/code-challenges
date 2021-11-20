@@ -1,5 +1,4 @@
 class MovingAverage
-
 =begin
     :type size: Integer
 =end
@@ -7,7 +6,6 @@ class MovingAverage
     @size = size
     @data = []
   end
-
 
 =begin
   :type val: Integer
