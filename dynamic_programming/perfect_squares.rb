@@ -1,5 +1,3 @@
-require 'pry-byebug'
-
 def get_all_perfect_squares(num, squares, min_to_num)
   i = 1
   while i * i <= num
