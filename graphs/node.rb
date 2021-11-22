@@ -5,4 +5,8 @@ class Node
     @val = val
     @neighbors = neighbors
   end
+
+  def add_edge(neighbor)
+    @neighbors << neighbor
+  end
 end
