@@ -27,8 +27,7 @@ def num_squares(num)
   squares = []
   min_to_num = { 0 => 0 }
   get_all_perfect_squares(num, squares, min_to_num)
-
   min_num_squares(num, squares, min_to_num)
 end
 
-puts num_squares(5254)
+puts num_squares(50)
