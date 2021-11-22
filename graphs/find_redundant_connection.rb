@@ -9,7 +9,6 @@ def find_redundant_connection(edges)
 end
 
 def find(v, parent)
-  p "#{parent}, #{parent[v] || 'nil'}, #{v}"
   parent[v] = v if parent[v].nil?
   parent[v] = find(parent[v], parent) if parent[v] != v
   parent[v]
