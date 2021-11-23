@@ -7,7 +7,7 @@ def my_atoi(s)
   data = nil
   str = s.strip
   str.each_char do |c|
-    is_sign_or_num = c.match?(/[\+\-\d]/)
+    is_sign_or_num = c.match?(/[+\-\d]/)
     if is_sign_or_num
       data = data.nil? ? c : "#{data}#{c}"
     else
