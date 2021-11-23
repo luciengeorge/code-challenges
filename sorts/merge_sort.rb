@@ -1,3 +1,5 @@
+# https://medium.com/@allegranzia/merge-sort-in-ruby-102b750af287
+
 def merge_sort(array)
   return array if array.size <= 1
 
