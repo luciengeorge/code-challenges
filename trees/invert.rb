@@ -7,8 +7,6 @@ def invert_tree(root)
   invert_tree(node.left)
   invert_tree(node.right)
 
-  temp = node.left
-  node.left = node.right
-  node.right = temp
+  node.left, node.right = node.right, node.left
   node
 end
