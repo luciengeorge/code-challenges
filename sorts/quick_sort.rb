@@ -8,6 +8,7 @@ def quick_sort(array, first = 0, last = array.size - 1)
 end
 
 def partition(array, first, last)
+  p array
   pivot = array[last]
   partition_index = first
   i = first
@@ -22,5 +23,5 @@ def partition(array, first, last)
   partition_index
 end
 
-array = [4, 6, 9, 1, 5, 61, 7, 3]
+array = [4, 2, 1, 3]
 p quick_sort(array)
