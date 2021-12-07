@@ -54,19 +54,17 @@ p preorder_traversal(root)
 # left, root, right
 def inorder_traversal(node)
   return [] unless node
-  return [node.val] if node.left.nil? && node.right.nil?
 
-  [inorder_traversal(node.left), node.val, inorder_traversal(node.right)].flatten
+  inorder_traversal(node.left) + [node.val] + inorder_traversal(node.right)
 end
 
 p inorder_traversal(root)
 
 # left, right, root
-def postorder_traversal(node)
-  return [] unless node
-  return [node.val] if node.left.nil? && node.right.nil?
+def postorder_traversal(root)
+  return [] unless root
 
-  [postorder_traversal(node.left), postorder_traversal(node.right), node.val].flatten
+  postorder_traversal(root.left) + postorder_traversal(root.right) + [root.val]
 end
 
 p postorder_traversal(root)
