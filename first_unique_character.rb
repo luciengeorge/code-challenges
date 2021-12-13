@@ -24,7 +24,7 @@ Constraints:
 def first_uniq_char(s)
   chars = {}
 
-  s.chars.each_with_index do |char, index|
+  s.chars.each do |char|
     chars[char] ||= 0
     chars[char] += 1
   end
