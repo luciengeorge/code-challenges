@@ -18,10 +18,10 @@ def get_hint(secret, guess)
 
   g_arr.each do |char|
     s_index = s_arr.index(char)
-    if s_index
-      cows += 1
-      s_arr.delete_at(s_index)
-    end
+    next unless s_index
+
+    cows += 1
+    s_arr.delete_at(s_index)
   end
 
   "#{bulls}A#{cows}B"
