@@ -1,35 +1,38 @@
 # https://leetcode.com/problems/implement-queue-using-stacks/
+
 class MyQueue
   def initialize
-    @stack_in = []
-    @stack_out = []
+    @in = []
+    @out = []
     @size = 0
   end
 
-  def push(x)
+  def push(el)
+    @in << el
     @size += 1
-    @stack_in.push(x)
-  end
-
-  def pop
-    if @stack_out.empty?
-      return nil if @stack_in.empty?
-
-      @stack_out.push(@stack_in.pop) while @stack_in.any?
-    end
-    @size -= 1
-    @stack_out.pop
   end
 
   def peek
-    if @stack_out.empty?
-      return nil if @stack_in.empty?
+    if @out.empty?
+      return nil if @in.empty?
 
-      while @stack_in.any?
-        @stack_out.push(@stack_in.pop)
+      while @in.any?
+        @out << @in.pop
       end
     end
-    @stack_out.last
+    @out.last
+  end
+
+  def pop
+    if @out.empty?
+      return nil if @in.empty?
+
+      while @in.any?
+        @out << @in.pop
+      end
+    end
+    @size -= 1
+    @out.pop
   end
 
   def empty
