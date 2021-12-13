@@ -22,14 +22,12 @@ Constraints:
 =end
 
 def first_uniq_char(s)
-  chars = Hash.new(0)
-  s.chars.each do |s|
-    chars[s] += 1
+  chars = {}
+
+  s.chars.each do |char|
+    chars[char] ||= 0
+    chars[char] += 1
   end
-  chars = chars.select { |k, v| v == 1 }
-  if chars.any?
-    s.chars.find_index(chars.keys.first)
-  else
-    -1
-  end
+  char = chars.key(1)
+  char ? s.chars.find_index(char) : -1
 end
