@@ -1,3 +1,10 @@
+## explanation on why we use size / 2 - 1
+# A complete binary heap of height h has 2^h - 1 elements.
+# Of those, elements in the closed range [0, (2^h)/2-1] are internal nodes (including the root),
+# and elements in the closed range [(2^h)/2, 2^h-2] are leaf nodes.
+# The leaf nodes are already (trivial) heaps. The first element you need to heapify -- because it has a child,
+# which might violate the heap property -- is at index (2^h)/2-1.
+
 class Heap
   attr_accessor :size, :array
 
