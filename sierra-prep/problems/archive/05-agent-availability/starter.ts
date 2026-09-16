@@ -1,4 +1,4 @@
-import { check, suite } from '../../lib/check'
+import { check, suite } from '../../../lib/check'
 
 type Busy = { agentId: string, start: number, end: number }
 

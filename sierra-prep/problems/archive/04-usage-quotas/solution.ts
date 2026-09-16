@@ -1,4 +1,4 @@
-import { check, checkThrows, suite } from '../../lib/check'
+import { check, checkThrows, suite } from '../../../lib/check'
 
 // Decisions made up front, because every comparison below depends on them:
 // - Rolling window, not fixed buckets. A fixed bucket lets a customer spend the whole quota at 59s

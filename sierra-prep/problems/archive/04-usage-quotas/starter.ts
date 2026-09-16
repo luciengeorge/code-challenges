@@ -1,4 +1,4 @@
-import { check, checkThrows, suite } from '../../lib/check'
+import { check, checkThrows, suite } from '../../../lib/check'
 
 // `check` needs a value and an unimplemented method throws before it can produce one, so trap the
 // throw and let the message show up as the failure.
