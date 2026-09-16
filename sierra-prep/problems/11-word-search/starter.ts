@@ -39,9 +39,11 @@ suite('exist', () => {
   check('a single cell board that does not match', attempt(() => exist([['a']], 'b')), false)
   check('letters are case-sensitive', attempt(() => exist(board, 'abcced')), false)
 
+  // Asserted alongside the result so it cannot go green before you have written anything. This is
+  // the mark-recurse-UNMARK invariant, and forgetting the unmark is the classic backtracking bug.
   const before = copy(board)
-  attempt(() => exist(board, 'ABCCED'))
-  check('the board comes back exactly as it went in', board, before)
+  const found = attempt(() => exist(board, 'ABCCED'))
+  check('the board comes back exactly as it went in', [found, board], [true, before])
 })
 
 // FOLLOW-UP 1: write findPath(board, word) returning the coordinates or null, then uncomment.
