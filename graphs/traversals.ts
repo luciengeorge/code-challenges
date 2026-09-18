@@ -1,17 +1,18 @@
 import Node from './node'
 
 function bfs(root: Node, target: number) {
-  const visited = new Set<Node>()
+  const visited = new Set<Node>([root])
   const queue: Node[] = [root]
 
   while (queue.length > 0) {
-    const current = queue.shift()
-    if (current?.val === target) {
+    const current = queue.shift()!
+    if (current.val === target) {
       return true
     }
 
-    current?.neighbors.forEach((neighbor) => {
+    current.neighbors.forEach((neighbor) => {
       if (!visited.has(neighbor)) {
+        visited.add(neighbor)
         queue.push(neighbor)
       }
     })
@@ -20,18 +21,19 @@ function bfs(root: Node, target: number) {
 }
 
 function dfs(root: Node, target: number) {
-  const visited = new Set<Node>()
+  const visited = new Set<Node>([root])
   const stack = [root]
 
   while (stack.length > 0) {
-    const current = stack.pop()
-    if (current?.val === target) {
+    const current = stack.pop()!
+    if (current.val === target) {
       return true
     }
 
-    current?.neighbors.forEach((neighbor) => {
+    current.neighbors.forEach((neighbor) => {
       if (!visited.has(neighbor)) {
-        stack.unshift(neighbor)
+        visited.add(neighbor)
+        stack.push(neighbor)
       }
     })
   }
@@ -54,3 +56,5 @@ node5.neighbors.push(node3)
 
 console.log(bfs(root, 10))
 console.log(dfs(root, 10))
+console.log(bfs(root, 99))
+console.log(dfs(root, 99))
